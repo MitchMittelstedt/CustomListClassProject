@@ -10,12 +10,22 @@ namespace CustomListClassProject
     {
         static void Main(string[] args)
         {
-            // The code provided will print ‘Hello World’ to the console.
-            // Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
-            Console.WriteLine("Hello World!");
-            Console.ReadKey();
+            CustomList<int> listOne = new CustomList<int>();
+            CustomList<int> listTwo = new CustomList<int>();
+            CustomList<int> reducedListOneAndTwo = new CustomList<int>();
+            int expected;
+            int actual;
+            listOne.Add(0);
+            listOne.Add(9);
+            listOne.Add(2);
+            listTwo.Add(0);
+            listTwo.Add(1);
+            listTwo.Add(2);
+            reducedListOneAndTwo = listOne - listTwo;
+            expected = 9;
+            actual = reducedListOneAndTwo[0];
 
-            // Go to http://aka.ms/dotnet-get-started-console to continue learning how to build a console app! 
         }
     }
 }
+
