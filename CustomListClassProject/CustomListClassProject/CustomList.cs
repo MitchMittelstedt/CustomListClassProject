@@ -164,7 +164,7 @@ namespace CustomListClassProject
                 bigList = items2Zip.items;
             }
             int zippedListCount;
-            zippedListCount = count + items2Zip.count;
+            zippedListCount = minCount + maxCount;
             for (int i = 0; i < minCount; i++)
             {
                 zippedList.Add(littleList[i]);
@@ -175,8 +175,8 @@ namespace CustomListClassProject
                 zippedList.Add(bigList[i]);
             }
             items = zippedList.items;
+            count = zippedListCount;
         }
-
     }
 }
 
