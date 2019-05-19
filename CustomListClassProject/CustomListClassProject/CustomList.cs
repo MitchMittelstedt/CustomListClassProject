@@ -140,6 +140,43 @@ namespace CustomListClassProject
 
             return reducedListOneAndTwo;
         }
+
+        public void Zip(CustomList<T> items2Zip)
+        {
+            CustomList<T> zippedList = new CustomList<T>();
+            T[] littleList = new T[capacity];
+            T[] bigList = new T[capacity];
+
+            int minCount;
+            int maxCount;
+            if (count > items2Zip.count)
+            {
+                minCount = items2Zip.count;
+                maxCount = count;
+                littleList = items2Zip.items;
+                bigList = items;
+            }
+            else
+            {
+                minCount = count;
+                maxCount = items2Zip.count;
+                littleList = items;
+                bigList = items2Zip.items;
+            }
+            int zippedListCount;
+            zippedListCount = count + items2Zip.count;
+            for (int i = 0; i < minCount; i++)
+            {
+                zippedList.Add(littleList[i]);
+                zippedList.Add(bigList[i]);
+            }
+            for (int i = minCount; i < maxCount; i++)
+            {
+                zippedList.Add(bigList[i]);
+            }
+            items = zippedList.items;
+        }
+
     }
 }
 

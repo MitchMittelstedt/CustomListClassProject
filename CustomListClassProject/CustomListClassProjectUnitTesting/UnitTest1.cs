@@ -310,8 +310,15 @@ namespace CustomListClassProjectUnitTesting
             //ASSERT
             Assert.AreEqual(expected, actual);
         }
+    }
+
+    [TestClass]
+
+    public class Plus
+
+    {
         [TestMethod]
-        public void plusOperatorTest1_()
+        public void PlusOperator_Count_ReturnListOneAndTwoCount()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int>();
@@ -336,7 +343,7 @@ namespace CustomListClassProjectUnitTesting
         }
         [TestMethod]
 
-        public void plusOperatorTest2()
+        public void PlusOperator_Index_ReturnValueAtIndexOfListOneAndTwo()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int>();
@@ -360,9 +367,12 @@ namespace CustomListClassProjectUnitTesting
             Assert.AreEqual(expected, actual);
         }
 
+    }
+    [TestClass]
+    public class Minus
+    {
         [TestMethod]
-
-        public void minusOperatorTest()
+        public void MinusOperator_Index_ReturnValueAtIndexOfReducedListOneAndTwo()
         {
             //ARRANGE
             CustomList<int> listOne = new CustomList<int>();
@@ -370,7 +380,7 @@ namespace CustomListClassProjectUnitTesting
             CustomList<int> reducedListOneAndTwo = new CustomList<int>();
             int expected;
             int actual;
-
+            
             //ACT
             listOne.Add(0);
             listOne.Add(9);
@@ -383,9 +393,21 @@ namespace CustomListClassProjectUnitTesting
             actual = reducedListOneAndTwo[0];
 
             //ASSERT
+
             Assert.AreEqual(expected, actual);
         }
     }
+    
+    [TestClass]
+    public class Zip
+    {
+        [TestMethod]
+        public void Zip_Index_ReturnValueAtIndexOfZippedList()
+        {
+
+        }
+    }
+
     
 
 
