@@ -1,0 +1,28 @@
+        public static CustomList<T> operator -(CustomList<T> listOne, CustomList<T> listTwo)
+        {
+            CustomList<T> reducedListOneAndTwo = new CustomList<T>();
+
+            for (int i = 0; i < listOne.Count; i++)
+            {
+                for (int b = 0; b < listTwo.Count; b++)
+                {
+                    if (listOne[i].Equals(listTwo[b]))
+                    {
+                        listOne.Remove(listOne[i]);
+                    }
+                }
+                reducedListOneAndTwo.Add(listOne[i]);
+            }
+
+            return reducedListOneAndTwo;
+        }
+
+
+line 1: To overload certain operators like the -, make a user-defined type by defining the static member function with the operator keyword.  It takes two parameters, listOne and listTwo, both of the CustomList class.
+line 2: Outside of the parameters, instantiate new CustomList reducedListOneAndTwo, which will contain listOne after the items in listTwo have been removed from it.
+line 3: Loop through list one,
+line 4: and through list two, to check all the items in both lists for matches.
+line 5: Iterating through both lists, the if statement checks for the aforementioned matches between elements i in listOne and elements b in listTwo.
+line 6: These matches, which have to be among the elements i, are removed from listOne, via Remove method.
+line 7: Still within the first for loop, add the matched elements in listOne to reducedListOneAndTwo.  #Looking back, reducedListOneAndTwo may be unnecessary. I might be able to return just ListOne where I currently return reducedListOneAndTwo, and delete reducedListOneAndTwo entirely.
+line 8: Return the final list.
